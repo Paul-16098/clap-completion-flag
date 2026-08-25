@@ -1,0 +1,13 @@
+---
+source: src/test/mod.rs
+expression: "String::from_utf8(f).expect(\"failed to convert bytes to string\")"
+---
+complete -c test -l generate-completion -d 'Generate shell completion script to stdout and exit' -r -f -a "bash\t''
+elvish\t''
+fish\t''
+nushell\t''
+powershell\t''
+zsh\t''
+carapace-spec\t''"
+complete -c test -s f -l flag-a
+complete -c test -s h -l help -d 'Print help'

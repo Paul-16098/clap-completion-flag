@@ -1,0 +1,33 @@
+---
+source: src/test/mod.rs
+expression: "String::from_utf8(f).expect(\"failed to convert bytes to string\")"
+---
+
+use builtin;
+use str;
+
+set edit:completion:arg-completer[test] = {|@words|
+    fn spaces {|n|
+        builtin:repeat $n ' ' | str:join ''
+    }
+    fn cand {|text desc|
+        edit:complex-candidate $text &display=$text' '(spaces (- 14 (wcswidth $text)))$desc
+    }
+    var command = 'test'
+    for word $words[1..-1] {
+        if (str:has-prefix $word '-') {
+            break
+        }
+        set command = $command';'$word
+    }
+    var completions = [
+        &'test'= {
+            cand --generate-completion 'Generate shell completion script to stdout and exit'
+            cand -f 'f'
+            cand --flag-a 'flag-a'
+            cand -h 'Print help'
+            cand --help 'Print help'
+        }
+    ]
+    $completions[$command]
+}

@@ -1,0 +1,19 @@
+---
+source: src/test/mod.rs
+expression: "String::from_utf8(f).expect(\"failed to convert bytes to string\")"
+---
+module completions {
+
+  def "nu-complete test generate_completion" [] {
+    [ "bash" "elvish" "fish" "nushell" "powershell" "zsh" "carapace-spec" ]
+  }
+
+  export extern test [
+    --generate-completion: string@"nu-complete test generate_completion" # Generate shell completion script to stdout and exit
+    --flag-a(-f)
+    --help(-h)                # Print help
+  ]
+
+}
+
+export use completions *

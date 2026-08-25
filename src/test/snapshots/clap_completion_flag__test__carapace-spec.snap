@@ -1,0 +1,21 @@
+---
+source: src/test/mod.rs
+expression: "String::from_utf8(f).expect(\"failed to convert bytes to string\")"
+---
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: clap-completion-flag
+description: ''
+flags:
+  -f, --flag-a: ''
+  --generate-completion=: Generate shell completion script to stdout and exit
+  -h, --help: Print help
+completion:
+  flag:
+    generate-completion:
+    - bash
+    - elvish
+    - fish
+    - nushell
+    - powershell
+    - zsh
+    - carapace-spec
