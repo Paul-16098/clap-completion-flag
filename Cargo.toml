@@ -1,6 +1,6 @@
 [package]
 name = "clap-completion-flag"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 description = "A small utility to generate shell completion scripts for clap-based applications."
 readme = "README.md"
