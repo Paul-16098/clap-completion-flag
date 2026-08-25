@@ -2,7 +2,13 @@
 name = "clap-completion-flag"
 version = "1.0.0"
 edition = "2024"
+description = "A small utility to generate shell completion scripts for clap-based applications."
+readme = "README.md"
+homepage = "https://github.com/Paul-16098/clap-completion-flag"
+repository = "https://github.com/Paul-16098/clap-completion-flag"
 license-file = "LICENSE.txt"
+keywords = ["clap", "completion"]
+categories = ["command-line-interface"]
 
 [dependencies]
 carapace_spec_clap = "1.2.3"
