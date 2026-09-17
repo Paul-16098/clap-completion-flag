@@ -7,6 +7,8 @@ use carapace_spec_clap::Spec;
 use clap_complete::shells::{Bash, Elvish, Fish, PowerShell, Zsh};
 use clap_complete_nushell::Nushell;
 
+pub use clap_complete::generate;
+
 #[derive(Debug, Clone, Copy, ValueEnum, PartialEq, Eq)]
 pub enum CompletionShell {
 	#[value(name = "bash")]
