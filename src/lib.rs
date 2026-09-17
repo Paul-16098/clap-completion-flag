@@ -70,5 +70,3 @@ pub struct Completion {
 	/// Generate shell completion script to stdout and exit
 	pub generate_completion: Option<CompletionShell>,
 }
-
-impl Completion {}
