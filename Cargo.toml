@@ -9,6 +9,7 @@ repository = "https://github.com/Paul-16098/clap-completion-flag"
 license-file = "LICENSE.txt"
 keywords = ["clap", "completion"]
 categories = ["command-line-interface"]
+rust-version = "1.85"
 
 [dependencies]
 carapace_spec_clap = "1.2.3"
